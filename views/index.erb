@@ -1,0 +1,11 @@
+<p class="lead">Words in your dictionary:</p>
+
+<ul>
+  <% if(@words.length().>(0)) %>
+    <% @words.each() do |word| %>
+      <li><a href="#"><%= word %></a></li>
+    <% end %>
+  <% end %>
+</ul>
+
+<a href="/dictionary/add/" class="btn">Add Word</a>
