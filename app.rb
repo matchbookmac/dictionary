@@ -19,7 +19,6 @@ post('/dictionary/add') do
   type = params.fetch('type')
   definition = params.fetch('definition')
   @definition = Definition.new({:type => type, :definition => definition})
-  @definition.save()
   @word = Word.new({:spelling => spelling})
   already_exists = false
   @existing_word = nil
@@ -52,7 +51,6 @@ post('/dictionary/:id/:word/add') do
   type = params.fetch('type')
   definition = params.fetch('definition')
   @definition = Definition.new({:type => type, :definition => definition})
-  @definition.save()
   @word.add_definition(@definition)
   erb(:word_success)
 end

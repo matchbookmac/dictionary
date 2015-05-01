@@ -66,7 +66,6 @@ describe(Word) do
   describe('#add_definition') do
     it('adds a definition to the word') do
       test_definition = Definition.new({:type => 'noun', :definition => 'A programming language.'})
-      test_definition.save()
       test_word = Word.new({:spelling => 'Ruby'})
       test_word.save()
       test_word.add_definition(test_definition)
