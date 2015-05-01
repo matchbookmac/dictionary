@@ -2,14 +2,19 @@ body {
   background-color: #738AAF;
 }
 
-.app-box {
+.app-box, .header-box {
   background-color: #ffffff;
+  float: none;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.app-box {
   border-radius: 0px 0px 5px 5px;
   padding: 2em 2em;
 }
 
 .header-box {
-  background-color: #ffffff;
   padding: 1em 1em;
 }
 
