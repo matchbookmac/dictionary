@@ -21,8 +21,19 @@ post('/dictionary/add') do
   @definition = Definition.new({:type => type, :definition => definition})
   @definition.save()
   @word = Word.new({:spelling => spelling})
-  @word.save()
-  @word.add_definition(@definition)
+  already_exists = false
+  @existing_word = nil
+  @words = Word.all()
+  @words.each() do |word|
+    if(word.spelling().eql?(@word.spelling()))
+      already_exists = true
+      @existing_word = word
+    end
+  end
+  if(already_exists.eql?(false))
+    @word.save()
+    @word.add_definition(@definition)
+  end
   erb(:word_success)
 end
 
