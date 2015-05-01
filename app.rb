@@ -22,8 +22,13 @@ post('/dictionary/add') do
   @definition.save()
   @word = Word.new({:spelling => spelling})
   @word.save()
-  @word.add_definition(definition)
+  @word.add_definition(@definition)
   erb(:word_success)
+end
+
+get('/dictionary/:id') do
+  @word = Word.find(params.fetch('id').to_i())
+  erb(:definition)
 end
 
 get('/dictionary/:id/add') do
@@ -37,6 +42,6 @@ post('/dictionary/:id/add') do
   definition = params.fetch('definition')
   @definition = Definition.new({:type => type, :definition => definition})
   @definition.save()
-  @word.add_definition(definition)
+  @word.add_definition(@definition)
   erb(:word_success)
 end

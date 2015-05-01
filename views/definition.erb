@@ -1,0 +1,10 @@
+  <p class="lead">Definition<% if(@word.define.length().>(1)) %>s<% end %> of the word <strong><%= @word.spelling() %></strong>:</p>
+  <ul>
+    <% @word.define().each() do |definition| %>
+      <li><strong><%= definition.type() %></strong>: <%= definition.definition() %></li>
+    <% end %>
+  </ul>
+  <br>
+  <a href="/dictionary/add" class="btn btn-default" role="button">Add Another Word</a>
+  <a href="/dictionary/<%= @word.id() %>/add" class="btn btn-default" role="button">Add Another Definition to this Word</a>
+  <a href="/" class="btn btn-default" role="button">Home</a>
