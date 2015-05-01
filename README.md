@@ -1,6 +1,6 @@
 #Dictionary
 
-<a href="http://wordfrequencybyian.herokuapp.com/" target="#">Link to Heroku app</a>
+<a href="http://dictionarybyian.herokuapp.com/" target="#">Link to Heroku app</a>
 
 By Ian MacDonald (<a href="https://github.com/matchbookmac" target="#">GitHub</a>)
 
