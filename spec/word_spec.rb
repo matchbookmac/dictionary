@@ -54,21 +54,24 @@ describe(Word) do
       expect(Word.find(2)).to(eq(test_word_2))
     end
   end
-  # describe('#add_definition') do
-  #   it('adds a definition to the word') do
-  #     test_definition = Definition.new({:type => 'noun', :definition => 'A programming language.'})
-  #     test_word = Word.new({:spelling => 'Ruby'})
-  #     test_word.add_definition(test_definition)
-  #     expect(test_word.define()).to(eq(test_definition))
-  #   end
-  # end
-  #
-  # describe('#define') do
-  #   it('returns the definition of a word') do
-  #     test_definition = Definition.new({:type => 'noun', :definition => 'A programming language.'})
-  #     test_word = Word.new({:spelling => 'Ruby'})
-  #     test_word.add_definition(test_definition)
-  #     expect(test_word.define()).to(eq(test_definition))
-  #   end
-  # end
+
+  describe('#define') do
+    it('returns an empty array of the definitions of a word') do
+      test_word = Word.new({:spelling => 'Ruby'})
+      test_word.save()
+      expect(test_word.define()).to(eq([]))
+    end
+  end
+
+  describe('#add_definition') do
+    it('adds a definition to the word') do
+      test_definition = Definition.new({:type => 'noun', :definition => 'A programming language.'})
+      test_definition.save()
+      test_word = Word.new({:spelling => 'Ruby'})
+      test_word.save()
+      test_word.add_definition(test_definition)
+      expect(test_word.define()).to(eq([test_definition]))
+    end
+  end
+
 end
