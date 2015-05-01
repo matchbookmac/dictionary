@@ -55,4 +55,18 @@ describe('the dictionary path', {:type => :feature}) do
     expect(page).to have_content('Noun')
     expect(page).to have_content('A language built for the web')
   end
+
+  it('will let the user add a word and then view the word home') do
+    visit('/')
+    click_link('Add Word')
+    fill_in('word', :with => 'PHP')
+    find('#type').find(:xpath, 'option[1]').select_option
+    fill_in('definition', :with => 'An oldie but goodie.')
+    click_button('Add')
+    expect(page).to have_content('Your word: PHP has been added to the dictionary')
+    click_link('View This Word')
+    expect(page).to have_content('My Personal Dictionary')
+    expect(page).to have_content('PHP')
+    expect(page).to have_content('An oldie but goodie.')
+  end
 end
