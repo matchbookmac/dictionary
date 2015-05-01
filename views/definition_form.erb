@@ -1,5 +1,5 @@
 <p class="lead">Please add another definition to the word <%= @word.spelling() %> below:</p>
-<form action="/dictionary/<%= @word.id() %>/add" method="post">
+<form action="/dictionary/<%= @word.id() %>/<%= @word.spelling() %>/add" method="post">
   <div class="form-group">
     <div class="form-inline">
       <label for="type">Word Class:</label>

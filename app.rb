@@ -26,17 +26,17 @@ post('/dictionary/add') do
   erb(:word_success)
 end
 
-get('/dictionary/:id') do
+get('/dictionary/:id/:word') do
   @word = Word.find(params.fetch('id').to_i())
   erb(:definition)
 end
 
-get('/dictionary/:id/add') do
+get('/dictionary/:id/:word/add') do
   @word = Word.find(params.fetch('id').to_i())
   erb(:definition_form)
 end
 
-post('/dictionary/:id/add') do
+post('/dictionary/:id/:word/add') do
   @word = Word.find(params.fetch('id').to_i())
   type = params.fetch('type')
   definition = params.fetch('definition')

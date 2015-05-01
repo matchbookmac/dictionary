@@ -2,7 +2,7 @@
 <ul>
   <% if(@words.length().>(0)) %>
     <% @words.each() do |word| %>
-      <li><a href="/dictionary/<%= word.id() %>"><%= word.spelling() %></a></li>
+      <li><a href="/dictionary/<%= word.id() %>/<%= word.spelling() %>"><%= word.spelling() %></a></li>
     <% end %>
   <% end %>
 </ul>
