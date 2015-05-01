@@ -11,13 +11,13 @@ describe('the dictionary path', {:type => :feature}) do
 
   it('will let the user add a word and navigate home') do
     visit('/')
-    click_button('Add Word')
+    click_link('Add Word')
     fill_in('word', :with => 'Ruby')
-    fill_in('type', :with => 'Noun')
+    find('type').find(:xpath, 'option[0]').select_option
     fill_in('definition', :with => 'An elegant and versatile programming language')
     click_button('Add')
     expect(page).to have_content('Your word: Ruby has been added to the dictionary')
-    click_button('Home')
+    click_link('Home')
     expect(page).to have_content('My Personal Dictionary')
     expect(page).to have_content('Ruby')
   end

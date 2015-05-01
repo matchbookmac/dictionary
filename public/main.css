@@ -4,9 +4,26 @@ body {
 
 .app-box {
   background-color: #ffffff;
-  border-radius: 5px;
+  border-radius: 0px 0px 5px 5px;
+  padding: 2em 2em;
+}
+
+.header-box {
+  background-color: #ffffff;
+  /*border-radius: 0px 0px 5px;*/
+  /*padding: 3em 0em;*/
 }
 
 h1 {
   text-align: center;
+}
+
+.btn-default {
+  background-color: #4D6892;
+  color: #ffffff;
+}
+
+.btn-default:hover {
+  background-color: #B4C3D8;
+  color: #4D6892;
 }

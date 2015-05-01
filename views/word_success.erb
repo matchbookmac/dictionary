@@ -1,0 +1,5 @@
+<p class="lead">'Your word: <%= @word.spelling() %> has been added to the dictionary'</p>
+
+<a href="/dictionary/add/" class="btn btn-default" role="button">Add Another Word</a>
+<a href="/dictionary/<%= @word.id() %>/add/" class="btn btn-default" role="button">Add Another Definition to this Word</a>
+<a href="/" class="btn btn-default" role="button">Home</a>

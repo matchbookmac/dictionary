@@ -1,0 +1,26 @@
+<p class="lead"></p>
+<form action="/dictionary/add" method="post">
+  <div class="form-group">
+    <input id="word" name="word" type="text" class="form-control" placeholder="Word" required>
+  </div>
+  <div class="form-group">
+    <select id="type" name="type" required>
+      <option value="">Please Select</option>
+      <option value="Noun">Noun</option>
+      <option value="Verb">Verb</option>
+      <option value="Adjective">Adjective</option>
+      <option value="Adverb">Adverb</option>
+      <option value="Pronoun">Pronoun</option>
+      <option value="Preposition">Preposition</option>
+      <option value="Conjunction">Conjunction</option>
+      <option value="Determiner">Determiner</option>
+      <option value="Exclamation">Exclamation</option>
+    </select>
+  </div>
+  <div class="form-group">
+    <input id="definition" name="definition" type="text" class="form-control" placeholder="Definition" required>
+  </div>
+  <div class="form-group">
+    <button type="submit" class="btn-success">Add</button>
+  </div>
+</form>
