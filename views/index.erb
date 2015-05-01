@@ -3,11 +3,11 @@
   <ul>
     <% if(@words.length().>(0)) %>
       <% @words.each() do |word| %>
-        <li><a href="#"><%= word %></a></li>
+        <li><a href="#"><%= word.spelling() %></a></li>
       <% end %>
     <% end %>
   </ul>
 </div>
 <div class="col-md-8">
-  <a href="/dictionary/add/" class="btn btn-default" role="button">Add Word</a>
+  <a href="/dictionary/add" class="btn btn-default" role="button">Add Word</a>
 </div>

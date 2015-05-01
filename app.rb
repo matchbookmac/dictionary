@@ -5,7 +5,7 @@ require('./lib/definition')
 also_reload('lib/**/*.rb')
 
 get('/') do
-  @words = []
+  @words = Word.all()
   erb(:index)
 end
 
@@ -13,11 +13,12 @@ get('/dictionary/add') do
   erb(:word_form)
 end
 
-post('dictionary/add') do
+post('/dictionary/add') do
   spelling = params.fetch('word')
   type = params.fetch('type')
   definition = params.fetch('definition')
-  definition.save()
+  @definition = Definition.new({:type => type, :definition => definition})
+  @definition.save()
   @word = Word.new({:spelling => spelling})
   @word.save()
   @word.add_definition(definition)

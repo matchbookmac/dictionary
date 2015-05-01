@@ -13,7 +13,7 @@ describe('the dictionary path', {:type => :feature}) do
     visit('/')
     click_link('Add Word')
     fill_in('word', :with => 'Ruby')
-    find('type').find(:xpath, 'option[0]').select_option
+    find('#type').find(:xpath, 'option[1]').select_option
     fill_in('definition', :with => 'An elegant and versatile programming language')
     click_button('Add')
     expect(page).to have_content('Your word: Ruby has been added to the dictionary')
