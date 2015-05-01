@@ -22,6 +22,14 @@ describe(Definition) do
     end
   end
 
+  describe('#save') do
+    it('saves a definition to the array of definitions') do
+      test_definition = Definition.new({:type => 'noun', :definition => 'A programming language.'})
+      test_definition.save()
+      expect(Definition.all()).to(eq([test_definition]))
+    end
+  end
+
   describe('.clear') do
     it('clears the array of definitions') do
       test_definition = Definition.new({:type => 'noun', :definition => 'A programming language.'})
