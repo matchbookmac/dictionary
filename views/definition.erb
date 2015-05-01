@@ -1,4 +1,4 @@
-  <p class="lead">Definition<% if(@word.define.length().>(1)) %>s<% end %> of the word <strong><%= @word.spelling() %></strong>:</p>
+  <p class="lead">Definition<% if(@word.define().length().>(1)) %>s<% end %> of the word <strong><%= @word.spelling() %></strong>:</p>
   <ul>
     <% @word.define().each() do |definition| %>
       <li><strong><%= definition.type() %></strong>: <%= definition.definition() %></li>
