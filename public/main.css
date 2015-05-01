@@ -27,3 +27,11 @@ h1 {
   background-color: #B4C3D8;
   color: #4D6892;
 }
+
+#word {
+  width: 100%;
+}
+
+#type {
+  width: 60%;
+}

@@ -3,6 +3,7 @@ require('sinatra/reloader')
 require('./lib/word')
 require('./lib/definition')
 also_reload('lib/**/*.rb')
+# also_reload('public/main.css')
 
 get('/') do
   @words = Word.all()

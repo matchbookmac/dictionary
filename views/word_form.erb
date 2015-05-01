@@ -1,26 +1,31 @@
 <p class="lead">Please add your word below:</p>
 <form action="/dictionary/add" method="post">
-  <div class="form-group">
-    <input id="word" name="word" type="text" class="form-control" placeholder="Word" required>
-  </div>
-  <div class="form-group">
-    <select id="type" name="type" required>
-      <option value="">Please Select</option>
-      <option value="Noun">Noun</option>
-      <option value="Verb">Verb</option>
-      <option value="Adjective">Adjective</option>
-      <option value="Adverb">Adverb</option>
-      <option value="Pronoun">Pronoun</option>
-      <option value="Preposition">Preposition</option>
-      <option value="Conjunction">Conjunction</option>
-      <option value="Determiner">Determiner</option>
-      <option value="Exclamation">Exclamation</option>
-    </select>
+  <div class="form-group form-inline">
+    <div class="row">
+      <div class="col-xs-6">
+        <input id="word" name="word" type="text" class="form-control cust-form" placeholder="Word" required>
+      </div>
+      <div class="col-xs-6">
+        <label for="type">Word Class:</label>
+        <select id="type" name="type" class="form-control" required>
+          <option value="">Please Select</option>
+          <option value="Noun">Noun</option>
+          <option value="Verb">Verb</option>
+          <option value="Adjective">Adjective</option>
+          <option value="Adverb">Adverb</option>
+          <option value="Pronoun">Pronoun</option>
+          <option value="Preposition">Preposition</option>
+          <option value="Conjunction">Conjunction</option>
+          <option value="Determiner">Determiner</option>
+          <option value="Exclamation">Exclamation</option>
+        </select>
+      </div>
+    </div>
   </div>
   <div class="form-group">
     <input id="definition" name="definition" type="text" class="form-control" placeholder="Definition" required>
   </div>
   <div class="form-group">
-    <button type="submit" class="btn-success">Add</button>
+    <button type="submit" class="btn btn-default">Add</button>
   </div>
 </form>
