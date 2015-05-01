@@ -1,5 +1,9 @@
-<p class="lead">'Your word: <%= @word.spelling() %> has been added to the dictionary'</p>
+<% if(@word.define().length.eql?(1)) %>
+  <p class="lead">Your word: <%= @word.spelling() %> has been added to the dictionary</p>
+<% else %>
+  <p class="lead">Your word: <%= @word.spelling() %> has been updated</p>
+<% end %>
 
-<a href="/dictionary/add/" class="btn btn-default" role="button">Add Another Word</a>
-<a href="/dictionary/<%= @word.id() %>/add/" class="btn btn-default" role="button">Add Another Definition to this Word</a>
+<a href="/dictionary/add" class="btn btn-default" role="button">Add Another Word</a>
+<a href="/dictionary/<%= @word.id() %>/add" class="btn btn-default" role="button">Add Another Definition to this Word</a>
 <a href="/" class="btn btn-default" role="button">Home</a>
